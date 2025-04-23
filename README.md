@@ -1,54 +1,49 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🍻 App Beer
 
-Currently, two official plugins are available:
+Aplicación desarrollada como solución para la prueba técnica **"Pagar cervezas"**, donde se simula un sistema de pedidos de cerveza entre amigos. La interfaz permite agregar cervezas a una orden, visualizar el detalle de cada ítem, registrar rondas de consumo y almacenar la información en Firebase.
+![UI interface](https://i.postimg.cc/k5fQpGdQ/image.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Deploy
 
-## Expanding the ESLint configuration
+La aplicación se encuentra desplegada en **[Vercel](https://vercel.com/)** y puede ser accedida desde el siguiente enlace:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+👉 [https://challenge-cometa-bnbr.vercel.app/](https://challenge-cometa-bnbr.vercel.app/)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Tecnologías Utilizadas
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Firebase](https://firebase.google.com/)
+- [React Router](https://reactrouter.com/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [React Query](https://tanstack.com/query/latest)
+- [Vite](https://vitejs.dev/)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 🚀 Funcionalidades Principales
+
+- Listado de cervezas disponibles (`stock`)
+- Visualización del detalle de cada cerveza
+- Agregado de ítems a una orden
+- Registro de múltiples rondas por orden
+- Cálculo de subtotales, descuentos e impuestos
+- Visualización de órdenes activas y pasadas
+- Almacenamiento y recuperación de datos desde Firebase
+- Responsive y accesible
+
+Interfaces integradas:
+- Lista de órdenes por pagar/pagadas (`Order Exist / Order Exist [Past]`)
+- Información de la orden (`Payment Address`)
+- Detalle de la cerveza (`Food Details`)
+
+## 📦 Instalación
+
+```bash
+# Clona el repositorio
+git clone https://github.com/Paularivarola/challenge-cometa
+cd challenge-cometa
+
+# Instala las dependencias
+npm install
