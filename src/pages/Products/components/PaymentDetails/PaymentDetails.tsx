@@ -45,7 +45,7 @@ const PaymentDetails = ({ handlePayOrder, isPending }: PaymentDetailsProps) => {
 
       <button
         onClick={handlePayOrder}
-        className="w-full py-3 bg-white text-black rounded-[2rem] font-semibold hover:bg-gray-100 transition"
+        className="w-full py-3 bg-white text-black rounded-[2rem] font-semibold hover:bg-gray-100 transition cursor-pointer"
       >
         {isPending ? "Cargando..." : "Pay"}
       </button>

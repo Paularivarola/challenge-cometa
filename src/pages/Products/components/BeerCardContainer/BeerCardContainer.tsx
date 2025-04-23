@@ -49,11 +49,15 @@ const BeerListContainer = ({ data }: BeerListContainerProps) => {
               onRemove={() => handleRemove(beer)}
               stock={beer.quantity}
             />
-            </div>
+          </div>
         ))}
       </div>
       <div className="mt-10 w-full flex justify-center">
-        <Button variant="tertiary" onClick={() => navigate("/checkout")}>
+        <Button
+          disabled={orderItems.length === 0}
+          variant="tertiary"
+          onClick={() => navigate("/checkout")}
+        >
           Checkout
         </Button>
       </div>
