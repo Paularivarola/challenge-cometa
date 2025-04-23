@@ -12,11 +12,25 @@ import { useSaveOrder } from "../../api/queries.ts";
 import { useState } from "react";
 import CheckoutSuccess from "../CheckoutSuccess/CheckoutSuccess.tsx";
 import { PUBLIC_ROUTES } from "../../routes/routes.ts";
+import { useAppSelector } from "../../store/hooks.ts";
+import EmptyState from "../../components/EmptyState/EmptyState.tsx";
 
 const Checkout = () => {
   const { mutate: saveOrder, isPending } = useSaveOrder();
   const navigate = useNavigate();
   const [purchaseId, setPurchaseId] = useState<string | null>(null);
+  const { items } = useAppSelector(
+    (state) => state.orders
+  );
+
+  if (items.length === 0) {
+    return (
+      <EmptyState
+        title="No pending orders"
+        message="Once you select a beer, the summary will appear here"
+      />
+    );
+  }
 
   const handlePayOrder = () => {
     const localOrder = loadOrderFromLocalStorage();
